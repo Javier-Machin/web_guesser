@@ -1,8 +1,30 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      .container {
+        text-align: center;
+        margin-top: 20%;
+      }
+      p {
+      	font-size: 30px;
+      	background: <%=color%>;
+      	display: inline;
+      }
+      input {
+      	margin-top: 5px;
+      	font-size: 20px;
+      }
+    </style>
+  </head>
   <body>
-  	<p>
-  	  The SECRET NUMBER is <%= secret_number%>
-    </p>
+  	<div class="container">
+      <p>
+        <%= message %>
+      </p>
+      <form>
+        <input type='text' name='guess' />
+        <input type='submit' value='Guess!' />
+      </form>
+    </div>
   </body>
 </html>
