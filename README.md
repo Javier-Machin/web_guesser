@@ -1,4 +1,4 @@
-# web_guesser
+# Web Guesser
 Number guessing game app on Sinatra
 
 To play it clone the repo and
