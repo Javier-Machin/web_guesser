@@ -6,16 +6,17 @@ class WebGuesser
   @@attemps = 0
 
   def self.reset_game
-      @@secret_number = rand(100)
-      @@attemps = 0
+    @@secret_number = rand(100)
+    @@attemps = 0
   end
 
+  #Game logic
   def self.check_guess(guess)
     @@attemps += 1
     guess = guess.to_i
 
 
-    if @@attemps == 4 && guess != @@secret_number
+    if @@attemps == 5 && guess != @@secret_number
       answer = ["Game over, the number was #{@@secret_number}, new number generated", "red"]
       reset_game
       answer
@@ -40,6 +41,7 @@ class WebGuesser
 
 end
 
+#Sends data to the view
 get '/' do
   guess_answer = WebGuesser::check_guess(params["guess"])
   erb :index, :locals => {:message => guess_answer[0], :color => guess_answer[1]}
